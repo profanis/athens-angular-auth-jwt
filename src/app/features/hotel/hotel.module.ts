@@ -1,3 +1,4 @@
+import { IsAdminGuard } from './../../core/is-admin.guard';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HotelListComponent } from './hotel-list/hotel-list.component';
@@ -6,7 +7,7 @@ import { HotelService } from './hotel.service';
 import { AuthenticatedGuard } from 'src/app/core/authenticated.guard';
 
 const routes: Routes = [
-  {path: "hotels", component: HotelListComponent, canActivate: [AuthenticatedGuard]}
+  {path: "hotels", component: HotelListComponent, canActivate: [AuthenticatedGuard, IsAdminGuard]}
 ];
 
 @NgModule({

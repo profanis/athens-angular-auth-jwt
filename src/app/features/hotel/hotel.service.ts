@@ -7,8 +7,10 @@ export class HotelService {
   constructor(private http: HttpClient) { }
 
   getHotels() {
-    return this.http.get("/hotel", {
-      headers: {"token": localStorage.getItem("token")}
-    });
+    // return this.http.get("/hotel", {
+    //   headers: {"Authorization": localStorage.getItem("token")}
+    // });
+
+    return this.http.get("/hotel");
   }
 }

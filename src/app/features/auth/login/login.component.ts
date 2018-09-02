@@ -40,9 +40,11 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   private userInitialization() {
     const token = localStorage.getItem("token");
-    const user: any = this.tokenUtilitiesService.getDecodedToken(token);
-    this.userService.setUser(user.username, user.first, user.last, user.id);
-    this.isAuthenticated = true;
+    if (token) {
+      const user: any = this.tokenUtilitiesService.getDecodedToken(token);
+      this.userService.setUser(user.username, user.first, user.last, user.id, user.roles);
+      this.isAuthenticated = true;
+    }
   }
 
   ngOnDestroy(): void {
