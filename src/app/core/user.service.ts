@@ -8,6 +8,7 @@ export class UserService {
   public first: string;
   public last: string;
   public id: number;
+  public isLoggedIn = false;
 
   constructor() { }
 
@@ -16,5 +17,6 @@ export class UserService {
     this.first = first;
     this.last = last;
     this.id = id;
+    this.isLoggedIn = true;
   }
 }

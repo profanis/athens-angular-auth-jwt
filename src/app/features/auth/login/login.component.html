@@ -19,5 +19,8 @@
       <td>
         <button type="buton" (click)="login()">Login</button>
       </td>
+      <td>
+        <span *ngIf="isAuthenticated">OK</span>
+      </td>
     </tr>
 </table>

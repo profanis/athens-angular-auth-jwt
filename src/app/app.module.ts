@@ -1,11 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { RouterModule, Routes } from "@angular/router";
-import { AuthModule } from './features/auth/auth.module';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FakeBackendInterceptor } from './core/fake-backend-interceptor.service';
+import { AuthModule } from './features/auth/auth.module';
+import { HotelModule } from './features/hotel/hotel.module';
+import { MuseumModule } from './features/museum/museum.module';
 
 const appRoutes: Routes = [
   // { path: "",  redirectTo: "/dashboard", pathMatch: "full" }
@@ -18,6 +20,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AuthModule,
+    HotelModule,
+    MuseumModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [

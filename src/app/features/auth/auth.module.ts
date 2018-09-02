@@ -5,8 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
-import { LoginService } from './login/login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginService } from './login.service';
 
 const routes: Routes = [
   {path: "auth", component: LoginComponent}
@@ -21,6 +21,7 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [LoginComponent],
-  providers: [LoginService]
+  providers: [LoginService],
+  exports: [RouterModule]
 })
 export class AuthModule { }
