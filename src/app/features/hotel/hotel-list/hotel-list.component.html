@@ -1,3 +1,8 @@
-<div *ngFor="let hotel of hotels$ | async">
-  <span>{{hotel.name}}</span> <strong>{{hotel.stars}}</strong>
+<h3>
+  List of hotels
+</h3>
+<div class="jumbotron">
+  <div *ngFor="let hotel of hotels$ | async">
+    <span>{{hotel.name}}</span> is a&nbsp;<strong>{{hotel.stars}}</strong> star hotel
+  </div>
 </div>

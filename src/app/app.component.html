@@ -1,13 +1,18 @@
-<ul>
-  <li>
-    <a [routerLink]="['/auth']">auth</a>
-  </li>
-  <li>
-    <a [routerLink]="['/hotels']">hotels</a>
-  </li>
-  <li>
-    <a [routerLink]="['/museums']">museums</a>
-  </li>
-</ul>
-<router-outlet></router-outlet>
-
+<nav class="navbar navbar-dark bg-dark mb-5">
+  <a class="navbar-brand" href="/">Athens Angular Meetup - Auth JWT</a>
+  <div class="navbar-expand mr-auto">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" [routerLink]="['/auth']">auth</a>
+      <a class="nav-item nav-link" [routerLink]="['/hotels']">hotels</a>
+      <a class="nav-item nav-link" [routerLink]="['/museums']">museums</a>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<nav class="navbar navbar-dark bg-dark mt-5 fixed-bottom">
+  <div class="navbar-expand m-auto navbar-text">
+    prodromouf@gmail.com
+  </div>
+</nav>

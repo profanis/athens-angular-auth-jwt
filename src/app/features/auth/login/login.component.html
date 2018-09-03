@@ -1,26 +1,18 @@
-<table>
-  <tr>
-    <td>
-        Username:
-    </td>
-    <td>
-      <input type="text" [(ngModel)]="username" name="username">
-    </td>
-  </tr>
-  <tr>
-      <td>
-          Password:
-      </td>
-      <td>
-        <input type="password" [(ngModel)]="password" name="password">
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <button type="buton" (click)="login()">Login</button>
-      </td>
-      <td>
-        <span *ngIf="isAuthenticated">OK</span>
-      </td>
-    </tr>
-</table>
+<h3>
+  Authentication
+</h3>
+<div class="jumbotron">
+
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" placeholder="Enter username" [(ngModel)]="username" name="username">
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control" placeholder="Enter password" [(ngModel)]="password" name="password">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <br>
+  <span *ngIf="isAuthenticated"><em>User is authenticated</em></span>
+</div>
