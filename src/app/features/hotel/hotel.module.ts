@@ -1,10 +1,11 @@
-import { IsAdminGuard } from './../../core/is-admin.guard';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HotelListComponent } from './hotel-list/hotel-list.component';
-import { Routes, RouterModule } from '@angular/router';
-import { HotelService } from './hotel.service';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { AuthenticatedGuard } from 'src/app/core/authenticated.guard';
+
+import { IsAdminGuard } from './../../core/is-admin.guard';
+import { HotelListComponent } from './hotel-list/hotel-list.component';
+import { HotelService } from './hotel.service';
 
 const routes: Routes = [
   {path: "hotels", component: HotelListComponent, canActivate: [AuthenticatedGuard, IsAdminGuard]}

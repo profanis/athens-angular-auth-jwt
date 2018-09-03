@@ -30,11 +30,11 @@ const appRoutes: Routes = [
     ToastrModule.forRoot() // ToastrModule added
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: TokenInterceptor,
+    //   multi: true
+    // },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: FakeBackendInterceptor,
