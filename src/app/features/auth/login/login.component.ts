@@ -38,6 +38,12 @@ export class LoginComponent implements OnInit, OnDestroy {
     .subscribe(onSucess,onError);
   }
 
+  logout() {
+    localStorage.removeItem("token");
+    this.userService.isLoggedIn = false;
+    this.isAuthenticated = false;
+  }
+
   private userInitialization() {
     const token = localStorage.getItem("token");
     if (token) {
